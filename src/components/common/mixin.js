@@ -1,9 +1,6 @@
 import {
 	getStyle
 } from '../../config/mUtils'
-import {
-	imgBaseUrl
-} from '../../config/env'
 
 export const loadMore = {
 	directives: {

@@ -35,25 +35,6 @@ compiler.plugin('compilation', function(compilation) {
 })
 
 var context = config.dev.context
-var proxypath = config.dev.proxypath
-
-var options = {
-    target: proxypath,
-    changeOrigin: true,
-}
-if (context.length) {
-    server.use(proxyMiddleware(context, options))
-}
-
-server.use(proxyMiddleware('/payapi', {
-    target: 'https://pay.ele.me',
-    changeOrigin: true,
-}))
-server.use(proxyMiddleware('/m.ele.me@json', {
-    target: 'https://crayfish.elemecdn.com',
-    changeOrigin: true,
-}))
-
 
 
 // handle fallback for HTML5 history API

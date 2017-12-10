@@ -15,11 +15,14 @@ var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirect
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/*', assetsPath)
+console.log(assetsPath)
+
 
 webpack(webpackConfig, function(err, stats) {
     spinner.stop()
     if (err) throw err
-    process.stdout.write(stats.toString({
+
+  process.stdout.write(stats.toString({
         colors: true,
         modules: false,
         children: false,

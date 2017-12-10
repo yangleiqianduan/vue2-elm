@@ -1,9 +1,21 @@
-$blue: #3190e8;  
-$bc: #e4e4e4;
-$fc:#fff;
+$blue: #3190e8;
+$bc: #e6e6e6;
+$wt:#fff;
+
+$bnbc0: #00c477;
+$bnbc1: #f0f0f0;
+$menutbc0: #f7f7f7;
+
+$bntext0:#fff;
+$bntext1:#666666;
+
+$menutext1: #333333;
+$menutext0: #56bc75;
+
+$headtext: #3a4043;
 
 // 背景图片地址和大小
-@mixin bis($url) { 
+@mixin bis($url) {
 	background-image: url($url);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -24,7 +36,7 @@ $fc:#fff;
 }
 
 //定位上下左右居中
-@mixin center {  
+@mixin center {
 	position: absolute;
 	top: 50%;
     left: 50%;
@@ -32,14 +44,14 @@ $fc:#fff;
 }
 
 //定位上下居中
-@mixin ct {  
+@mixin ct {
 	position: absolute;
 	top: 50%;
     transform: translateY(-50%);
 }
 
 //定位上下居中
-@mixin cl {  
+@mixin cl {
 	position: absolute;
 	left: 50%;
     transform: translateX(-50%);
@@ -52,7 +64,7 @@ $fc:#fff;
 }
 
 //字体大小、行高、字体
-@mixin font($size, $line-height, $family: 'Microsoft YaHei') {  
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
 	font: #{$size}/#{$line-height} $family;
 }
 
