@@ -6,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExportCdnResource = require('./ExportCdnResource')
 var env = config.build.env
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -19,7 +20,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     output: {
         path: config.build.assetsRoot,
         filename: utils.assetsPath('js/[name].js'),
-        chunkFilename: utils.assetsPath('js/[name].[chunkhash].min.js')
+        chunkFilename: utils.assetsPath('js/[name].[chunkhash].js')
     },
     vue: {
         loaders: utils.cssLoaders({
@@ -76,7 +77,9 @@ var webpackConfig = merge(baseWebpackConfig, {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             chunks: ['vendor']
-        })
+        }),
+      ExportCdnResource( config.build.assetsRoot),
+
     ]
 })
 
